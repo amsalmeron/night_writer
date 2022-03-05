@@ -1,4 +1,6 @@
 require './lib/file_reader.rb'
+require 'simplecov'
+SimpleCov.start
 
 
 RSpec.describe FileReader do
