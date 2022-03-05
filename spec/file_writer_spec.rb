@@ -12,9 +12,9 @@ RSpec.describe FileWriter do
     expect(file).to be_a(FileWriter)
   end
 
-  it 'reads a file' do
+  it 'write a file' do
     if ARGV[1] == 'braille.txt'
-      expect(file.read_english).to eq('hello')
+      expect(file.write_braille).to eq('hello')
     end
   end
 
