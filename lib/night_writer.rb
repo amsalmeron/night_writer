@@ -11,19 +11,10 @@ class NightWriter
     @translator = Translator.new(@input)
   end
 
-  # def translate
-  #   @translator.top_array_to_braille
-  #   @translator.mid_array_to_braille
-  #   @translator.bottom_array_to_braille
-  # end
-
   def create_new_braille_file
     @output = File.new(ARGV[1], "w")
-    @output.puts(@translator.top_array_to_braille)
-    @output.puts(@translator.mid_array_to_braille)
-    @output.puts(@translator.bottom_array_to_braille)
+    @output.puts(@translator.braille_message)
     @output.close
-    #@writer.write_braille(@input)
   end
 
   def display

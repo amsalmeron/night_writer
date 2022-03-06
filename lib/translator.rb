@@ -23,6 +23,7 @@ class Translator
     english_to_braille_array.join.each_char do |char|
       characters << char if total % 6 == 0 || total % 6 == 1
       total += 1
+      break if total >= 240
     end
     characters.join
   end
@@ -33,6 +34,7 @@ class Translator
     english_to_braille_array.join.each_char do |char|
       characters << char if total % 6 == 2 || total % 6 == 3
       total += 1
+      break if total > 240
     end
     characters.join
   end
@@ -43,8 +45,14 @@ class Translator
     english_to_braille_array.join.each_char do |char|
       characters << char if total % 6 == 4 || total % 6 == 5
       total += 1
+      break if total > 240
     end
     characters.join
+  end
+
+  def braille_message
+    message = (top_array_to_braille + "\n" + mid_array_to_braille + "\n" \
+    + bottom_array_to_braille)
   end
 
 end
