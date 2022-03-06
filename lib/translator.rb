@@ -12,7 +12,7 @@ class Translator
   def english_to_braille_array
     dictionary = english_dictionary
       characters = (File.read(@message).strip).split('')
-      characters.flat_map do |character|
+      braille_array = characters.flat_map do |character|
         dictionary[character] if dictionary[character] != nil
       end
   end
@@ -23,9 +23,8 @@ class Translator
     english_to_braille_array.join.each_char do |char|
       characters << char if total % 6 == 0 || total % 6 == 1
       total += 1
-      break if total >= 240
     end
-    characters.join
+    characters
   end
 
   def mid_array_to_braille
@@ -34,9 +33,8 @@ class Translator
     english_to_braille_array.join.each_char do |char|
       characters << char if total % 6 == 2 || total % 6 == 3
       total += 1
-      break if total > 240
     end
-    characters.join
+    characters
   end
 
   def bottom_array_to_braille
@@ -45,20 +43,34 @@ class Translator
     english_to_braille_array.join.each_char do |char|
       characters << char if total % 6 == 4 || total % 6 == 5
       total += 1
-      break if total > 240
     end
-    characters.join
+    characters
   end
 
   def line_counter
-    count = 0
-    top_array_to_braille.length
-    require "pry"; binding.pry
+    char = 0
+    top = []
+    mid = []
+    bottom = []
+    ((top_array_to_braille.join.length) / 80.0).ceil.times do
+      if (top_array_to_braille.join.length) - char > 80
+        top << top_array_to_braille[char..char + 79]
+        mid << mid_array_to_braille[char..char + 79]
+        bottom << bottom_array_to_braille[char..char + 79]
+        char += 80
+      else
+        top << top_array_to_braille[char..-1]
+        mid << mid_array_to_braille[char..-1]
+        bottom << bottom_array_to_braille[char..-1]
+      end
+    end
+    message = [top,mid,bottom]
   end
 
   def braille_message
-    message = (top_array_to_braille + "\n" + mid_array_to_braille + "\n" \
-    + bottom_array_to_braille)
+    line_counter
+    # message = (top_array_to_braille + "\n" + mid_array_to_braille + "\n" \
+    # + bottom_array_to_braille)
   end
 
 end

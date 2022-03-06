@@ -29,13 +29,13 @@ RSpec.describe Translator do
   end
 
   it 'can print in colums' do
-    expect(interpretor_2.top_array_to_braille).to eq('0.0.')
-    expect(interpretor_2.mid_array_to_braille).to eq('..0.')
-    expect(interpretor_2.bottom_array_to_braille).to eq('....')
+    expect(interpretor_2.top_array_to_braille).to eq(["0", ".", "0", "."])
+    expect(interpretor_2.mid_array_to_braille).to eq([".", ".", "0", "."])
+    expect(interpretor_2.bottom_array_to_braille).to eq([".", ".", ".", "."])
   end
 
   it 'can create new lines when braille message is too long' do
-    expect(interpretor_3.line_counter).to eq('this is not long enough')
+    expect(interpretor_3.line_counter.count).to eq(3)
   end
 
 end
