@@ -40,8 +40,55 @@
           null,
           null
         ]
+      },
+      "/Users/antoniosalmeron/turing/1module/projects/night_writer/spec/grid_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          2,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/antoniosalmeron/turing/1module/projects/night_writer/lib/grid.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1646526567
+    "timestamp": 1646527275
   }
 }
