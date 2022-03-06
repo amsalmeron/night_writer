@@ -1,5 +1,6 @@
 require './lib/file_reader'
 require './lib/file_writer'
+require './lib/translator'
 
 class NightWriter
   def initialize
@@ -7,6 +8,12 @@ class NightWriter
     @output = ARGV[1]
     @reader = FileReader.new
     @writer = FileWriter.new
+    @translator = Translator.new(@input)
+  end
+
+  def translate
+    require "pry"; binding.pry
+    @translator
   end
 
   def create_new_file
@@ -21,5 +28,6 @@ class NightWriter
 end
 
 a = NightWriter.new
+a.translate
 a.create_new_file
 a.display

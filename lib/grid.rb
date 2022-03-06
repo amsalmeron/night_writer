@@ -1,3 +1,5 @@
+require './lib/translator'
+
 class Grid
 
   attr_reader :top, :mid, :bottom

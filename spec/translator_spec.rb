@@ -27,4 +27,10 @@ RSpec.describe Translator do
                                                         ['.', '.']])
   end
 
+  it 'can print in colums' do
+    expect(interpretor_2.top_array_to_braille).to eq('0.0.')
+    expect(interpretor_2.mid_array_to_braille).to eq('..0.')
+    expect(interpretor_2.bottom_array_to_braille).to eq('....')
+  end
+
 end
