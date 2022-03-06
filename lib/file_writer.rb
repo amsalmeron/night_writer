@@ -1,3 +1,4 @@
+
 class FileWriter
 
   def write_braille(message)
