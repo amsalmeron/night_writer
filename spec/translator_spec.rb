@@ -7,6 +7,7 @@ RSpec.describe Translator do
 
   interpretor = Translator.new('./spec/fixtures/testing.txt')
   interpretor_2 = Translator.new('./spec/fixtures/testing_2.txt')
+  interpretor_3 = Translator.new('./spec/fixtures/testing_over40char_spec.txt')
 
   it 'exists' do
     expect(interpretor).to be_a(Translator)
@@ -31,6 +32,10 @@ RSpec.describe Translator do
     expect(interpretor_2.top_array_to_braille).to eq('0.0.')
     expect(interpretor_2.mid_array_to_braille).to eq('..0.')
     expect(interpretor_2.bottom_array_to_braille).to eq('....')
+  end
+
+  it 'can create new lines when braille message is too long' do
+    expect(interpretor_3.line_counter).to eq('this is not long enough')
   end
 
 end

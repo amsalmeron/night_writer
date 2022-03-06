@@ -50,6 +50,12 @@ class Translator
     characters.join
   end
 
+  def line_counter
+    count = 0
+    top_array_to_braille.length
+    require "pry"; binding.pry
+  end
+
   def braille_message
     message = (top_array_to_braille + "\n" + mid_array_to_braille + "\n" \
     + bottom_array_to_braille)
