@@ -68,10 +68,17 @@ class Translator
   end
 
   def braille_message
-    line_counter
-    require "pry"; binding.pry
-    # message = (top_array_to_braille + "\n" + mid_array_to_braille + "\n" \
-    # + bottom_array_to_braille)
+    row = 0
+    message = ''
+    until row == ((top_array_to_braille.join.length) / 80.0).ceil
+      top_line = line_counter[0][row].join
+      mid_line = line_counter[1][row].join
+      bottom_line = line_counter[2][row].join
+      message << (top_line + "\n" + mid_line + "\n" + bottom_line + "\n")
+
+      row += 1
+    end
+    message
   end
 
 end

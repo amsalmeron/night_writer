@@ -39,7 +39,7 @@ RSpec.describe Translator do
   end
 
   it 'can sort through a nested array of braille by row' do
-    expect(interpretor_3.braille_message).to eq("0")
+    expect(interpretor_3.braille_message.length).to eq(555)
   end
 
 end
