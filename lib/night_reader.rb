@@ -1,21 +1,21 @@
 require './lib/file_reader'
 require './lib/file_writer'
-require './lib/translator'
+#require './lib/braille_translator'
 
-class NightWriter
+class NightReader
   def initialize
     @input = ARGV[0]
     @output = ARGV[1]
     @reader = FileReader.new
     @writer = FileWriter.new
-    @translator = Translator.new(@input)
+    #@translator = BrailleTranslator.new(@input)
   end
 
-  def create_new_braille_file
-    @output = File.new(ARGV[1], "w")
-    @output.puts(@translator.braille_message)
-    @output.close
-  end
+  # def create_new_english_file
+  #   @output = File.new(ARGV[1], "w")
+  #   @output.puts(@translator.english_message)
+  #   @output.close
+  # end
 
   def display
     if @input != nil
@@ -25,6 +25,6 @@ class NightWriter
   end
 end
 
-new_translation = NightWriter.new
-new_translation.create_new_braille_file
+new_translation = NightReader.new
+# new_translation.create_new_english_file
 new_translation.display
