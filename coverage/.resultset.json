@@ -28,6 +28,7 @@
       },
       "/Users/antoniosalmeron/turing/1module/projects/night_writer/lib/file_writer.rb": {
         "lines": [
+          null,
           1,
           null,
           1,
@@ -89,6 +90,6 @@
         ]
       }
     },
-    "timestamp": 1646527275
+    "timestamp": 1646527625
   }
 }
