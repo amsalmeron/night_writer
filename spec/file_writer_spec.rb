@@ -13,8 +13,8 @@ RSpec.describe FileWriter do
   end
 
   it 'write a file' do
-    if ARGV[1] == 'braille.txt'
-      expect(file.write_braille).to eq('hello')
+    if ARGV[1] == './spec/fixtures/braille_spec.txt'
+      expect(file.write_braille('./spec/fixtures/message_spec.txt')).to eq(10)
     end
   end
 

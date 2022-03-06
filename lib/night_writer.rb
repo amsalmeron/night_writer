@@ -1,14 +1,25 @@
 require './lib/file_reader'
 require './lib/file_writer'
 
-# class NightWriter
-#   def initialize(ARGV[0],ARGV[1])
-#     @input = ARGV[0]
-#     @output = ARGV[1]
-#     @reader = FileReader.new
-#   end
-# end
-input = ARGV[0]
-output = ARGV[1]
+class NightWriter
+  def initialize
+    @input = ARGV[0]
+    @output = ARGV[1]
+    @reader = FileReader.new
+    @writer = FileWriter.new
+  end
 
-puts "Created '#{output}' containing #{File.read(input).length} characters"
+  def create_new_file
+    @writer.write_braille(File.read(@input))
+  end
+
+  def display
+    if @input != nil
+    puts "Created '#{@output}' containing #{File.read(@input).length} characters"
+    end
+  end
+end
+
+a = NightWriter.new
+a.create_new_file
+a.display
