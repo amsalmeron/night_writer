@@ -1,4 +1,3 @@
-require './lib/grid'
 require './lib/english_dictionary'
 
 
@@ -8,7 +7,6 @@ class Translator
 
   def initialize(message)
     @message = message
-    @grid = Grid.new
   end
 
   def english_to_braille_array

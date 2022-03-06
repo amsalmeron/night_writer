@@ -18,7 +18,7 @@ class NightWriter
   # end
 
   def create_new_braille_file
-    @output = File.new("braille.txt", "w")
+    @output = File.new(ARGV[1], "w")
     @output.puts(@translator.top_array_to_braille)
     @output.puts(@translator.mid_array_to_braille)
     @output.puts(@translator.bottom_array_to_braille)
@@ -28,11 +28,12 @@ class NightWriter
 
   def display
     if @input != nil
-    puts "Created '#{File.basename(@output)}' containing #{File.read(@input).length} characters"
+    puts "Created '#{File.basename(@output)}'" \
+    "containing #{File.read(@input).length - 1} characters"
     end
   end
 end
 
-a = NightWriter.new
-a.create_new_braille_file
-a.display
+new_translation = NightWriter.new
+new_translation.create_new_braille_file
+new_translation.display
