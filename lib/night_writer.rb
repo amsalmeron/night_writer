@@ -10,7 +10,7 @@ class NightWriter
   end
 
   def create_new_file
-    @writer.write_braille(File.read(@input))
+    @writer.write_braille(@input)
   end
 
   def display
