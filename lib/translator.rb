@@ -15,7 +15,7 @@ class Translator
     dictionary = english_dictionary
       characters = (File.read(@message).strip).split('')
       characters.flat_map do |character|
-        p dictionary[character] if dictionary[character] != nil
+        dictionary[character] if dictionary[character] != nil
       end
   end
 
@@ -26,7 +26,7 @@ class Translator
       characters << char if total % 6 == 0 || total % 6 == 1
       total += 1
     end
-    p characters.join
+    characters.join
   end
 
   def mid_array_to_braille
@@ -36,7 +36,7 @@ class Translator
       characters << char if total % 6 == 2 || total % 6 == 3
       total += 1
     end
-    p characters.join
+    characters.join
   end
 
   def bottom_array_to_braille
@@ -46,7 +46,7 @@ class Translator
       characters << char if total % 6 == 4 || total % 6 == 5
       total += 1
     end
-    p characters.join
+    characters.join
   end
 
 end

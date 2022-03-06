@@ -11,23 +11,28 @@ class NightWriter
     @translator = Translator.new(@input)
   end
 
-  def translate
-    require "pry"; binding.pry
-    @translator
-  end
+  # def translate
+  #   @translator.top_array_to_braille
+  #   @translator.mid_array_to_braille
+  #   @translator.bottom_array_to_braille
+  # end
 
-  def create_new_file
-    @writer.write_braille(@input)
+  def create_new_braille_file
+    @output = File.new("braille.txt", "w")
+    @output.puts(@translator.top_array_to_braille)
+    @output.puts(@translator.mid_array_to_braille)
+    @output.puts(@translator.bottom_array_to_braille)
+    @output.close
+    #@writer.write_braille(@input)
   end
 
   def display
     if @input != nil
-    puts "Created '#{@output}' containing #{File.read(@input).length} characters"
+    puts "Created '#{File.basename(@output)}' containing #{File.read(@input).length} characters"
     end
   end
 end
 
 a = NightWriter.new
-a.translate
-a.create_new_file
+a.create_new_braille_file
 a.display
