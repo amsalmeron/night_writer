@@ -69,6 +69,7 @@ class Translator
 
   def braille_message
     line_counter
+    require "pry"; binding.pry
     # message = (top_array_to_braille + "\n" + mid_array_to_braille + "\n" \
     # + bottom_array_to_braille)
   end
