@@ -30,6 +30,16 @@ class BrailleTranslator
     message = (File.read(@message)).split("\n")
   end
 
+  def line_group
+    a = 0
+    english_rows = []
+    (line_split.count / 3).times do
+      english_rows << line_split[a..a+2]
+      a += 3
+    end
+    english_rows
+  end
+
   # def character_split
   #   line_split.each do |line|
   #     line.split('')
