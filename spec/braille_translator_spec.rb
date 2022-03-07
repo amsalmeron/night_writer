@@ -16,4 +16,8 @@ RSpec.describe BrailleTranslator do
     expect(interpretor.braille_to_english_array).to eq("h")
   end
 
+  it 'can translate a word from braille to englsih' do
+    expect(interpretor_2.braille_to_english_array).to eq("hello world")
+  end
+
 end
