@@ -12,4 +12,8 @@ RSpec.describe BrailleTranslator do
     expect(interpretor).to be_a(BrailleTranslator)
   end
 
+  it 'can translate a letter of braille to english' do
+    expect(interpretor.braille_to_english_array).to eq("h")
+  end
+
 end
