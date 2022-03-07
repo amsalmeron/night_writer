@@ -22,12 +22,12 @@ RSpec.describe BrailleTranslator do
   end
 
   it 'can parse test in peices between newlines' do
-    expect(interpretor_3.line_split).to eq([["0.0.0.0.0."],
-                                            ["00.00.0..0"],
-                                            ["....0.0.0."],
-                                            [".00.0.0.00"],
-                                            ["00.0000..0"],
-                                            [".00.0.0..."]])
+    expect(interpretor_3.line_split).to eq(["0.0.0.0.0.",
+                                            "00.00.0..0",
+                                            "....0.0.0.",
+                                            ".00.0.0.00",
+                                            "00.0000..0",
+                                            ".00.0.0..."])
   end
 
 

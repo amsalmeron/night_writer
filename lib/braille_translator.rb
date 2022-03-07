@@ -10,20 +10,30 @@ class BrailleTranslator
   end
 
   def braille_to_english_array
-      i = 0
-      words = []
-      characters = (File.read(@message)).split("\n")
-      characters.each_slice(3) do |top,mid,bottom|
-        (top.length / 2).times do
-          letter = []
-          letter << top[i..i+1]
-          letter << mid[i..i+1]
-          letter << bottom[i..i+1]
-          words << braille_dictionary[letter]
-          i += 2
-        end
+    i = 0
+    words = []
+    characters = (File.read(@message)).split("\n")
+    characters.each_slice(3) do |top,mid,bottom|
+      (top.length / 2).times do
+        letter = []
+        letter << top[i..i+1]
+        letter << mid[i..i+1]
+        letter << bottom[i..i+1]
+        words << braille_dictionary[letter]
+        i += 2
       end
-      words.join
+    end
+    words.join
   end
+
+  def line_split
+    message = (File.read(@message)).split("\n")
+  end
+
+  # def character_split
+  #   line_split.each do |line|
+  #     line.split('')
+  #   end
+  # end
 
 end
