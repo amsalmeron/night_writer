@@ -1,11 +1,9 @@
-require './lib/file_writer'
 require './lib/braille_translator'
 
 class NightReader
   def initialize
     @input = ARGV[0]
     @output = ARGV[1]
-    @writer = FileWriter.new
     @translator = BrailleTranslator.new(@input)
   end
 
