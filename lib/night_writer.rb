@@ -1,4 +1,3 @@
-require './lib/file_reader'
 require './lib/file_writer'
 require './lib/translator'
 
@@ -6,7 +5,6 @@ class NightWriter
   def initialize
     @input = ARGV[0]
     @output = ARGV[1]
-    @reader = FileReader.new
     @writer = FileWriter.new
     @translator = Translator.new(@input)
   end
@@ -20,7 +18,7 @@ class NightWriter
   def display
     if @input != nil
     puts "Created '#{File.basename(@output)}'" \
-    "containing #{File.read(@input).length - 1} characters"
+    " containing #{File.read(@input).length - 1} characters"
     end
   end
 end
