@@ -8,7 +8,7 @@ class NightReader
     @output = ARGV[1]
     @reader = FileReader.new
     @writer = FileWriter.new
-    #@translator = BrailleTranslator.new(@input)
+    @translator = BrailleTranslator.new(@input)
   end
 
   # def create_new_english_file
