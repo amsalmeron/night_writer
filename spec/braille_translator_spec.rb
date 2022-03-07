@@ -30,7 +30,7 @@ RSpec.describe BrailleTranslator do
                                             ".00.0.0..."])
   end
 
-  it 'can parse braille in peices between newlines' do
+  it 'can group braille into respective lines' do
     expect(interpretor_3.line_group).to eq([["0.0.0.0.0.",
                                             "00.00.0..0",
                                             "....0.0.0."],
@@ -38,6 +38,20 @@ RSpec.describe BrailleTranslator do
                                             "00.0000..0",
                                             ".00.0.0..."]])
   end
+
+  it 'can group braille by characters' do
+    expect(interpretor_3.character_group).to eq([[["0.","00",".."],
+                                                  ["0.",".0",".."],
+                                                  ["0.","0.","0."],
+                                                  ["0.","0.","0."],
+                                                  ["0.",".0","0."]],
+                                                  [[".0","00",".0"],
+                                                  ["0.",".0","0."],
+                                                  ["0.","00","0."],
+                                                  ["0.","0.","0."],
+                                                  ["00",".0",".."]]])
+  end
+
 
 
 end
