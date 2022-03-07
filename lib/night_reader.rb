@@ -20,7 +20,7 @@ class NightReader
   def display
     if @input != nil
     puts "Created '#{File.basename(@output)}'" \
-    " containing #{File.read(@input).length - 1} characters"
+    " containing #{(File.read(@input).length - 1) / 6} characters"
     end
   end
 end
