@@ -1,46 +1,6 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/antoniosalmeron/turing/1module/projects/night_writer/spec/file_reader_spec.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/antoniosalmeron/turing/1module/projects/night_writer/lib/file_reader.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null
-        ]
-      },
       "/Users/antoniosalmeron/turing/1module/projects/night_writer/spec/file_writer_spec.rb": {
         "lines": [
           1,
@@ -306,6 +266,6 @@
         ]
       }
     },
-    "timestamp": 1646615199
+    "timestamp": 1646615507
   }
 }

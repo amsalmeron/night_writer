@@ -6,7 +6,6 @@ class NightWriter
   def initialize
     @input = ARGV[0]
     @output = ARGV[1]
-    @reader = FileReader.new
     @writer = FileWriter.new
     @translator = Translator.new(@input)
   end
