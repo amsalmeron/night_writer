@@ -1,4 +1,3 @@
-require './lib/file_reader'
 require './lib/file_writer'
 require './lib/translator'
 

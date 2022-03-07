@@ -10,13 +10,20 @@ class BrailleTranslator
   end
 
   def braille_to_english_array
-    nested_array = []
-    dictionary = braille_dictionary
-      characters = (File.read(@message).gsub("\n","")).split('')
-      characters.each_slice(2) do |a,b|
-        nested_array << [a,b]
+      i = 0
+      words = []
+      characters = (File.read(@message)).split("\n")
+      characters.each_slice(3) do |top,mid,bottom|
+        (top.length / 2).times do
+          letter = []
+          letter << top[i..i+1]
+          letter << mid[i..i+1]
+          letter << bottom[i..i+1]
+          words << braille_dictionary[letter]
+          i += 2
+        end
       end
-      dictionary[nested_array] if dictionary[nested_array] != nil
+      words.join
   end
 
 end
