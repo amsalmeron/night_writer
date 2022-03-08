@@ -75,7 +75,6 @@ class Translator
       mid_line = line_counter[1][row].join
       bottom_line = line_counter[2][row].join
       message << (top_line + "\n" + mid_line + "\n" + bottom_line + "\n")
-
       row += 1
     end
     message
